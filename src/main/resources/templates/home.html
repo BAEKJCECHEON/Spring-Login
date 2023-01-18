@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<body>
+
+<div class="container">
+    <div>
+        <h1>Hello Spring!</h1>
+        <strong><span th:if="${session.name == null}">비회원</span></strong>
+        <strong><span th:if="${session.name != null}" th:text="${session.name}"></span></strong>
+        <span>님 안녕하세요</span>
+        <p>
+            <a href="/members/new">회원 가입</a>
+            <a th:if="${session.name != null}" href="/members">회원 목록</a>
+            <a href="/members/login">로그인</a>
+            <a th:if="${session.name != null}" href="/members/logout">로그아웃</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
